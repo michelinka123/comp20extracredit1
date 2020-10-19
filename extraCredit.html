@@ -1,0 +1,117 @@
+<!-- HTML page with 2 text boxes positioned to the left and right of a button.
+Button face has arrow pointing to the right (->). When the button is clicked, text in the textbox on the left is copied to the text box on the right and removed from  textbox on the left. Button face changes to an arrow facing left (<-). Next press of the button moves the text on right to textbox on the left and changes button face back to an arrow facing right -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Extra Credit</title>
+	<!--INTERNAL STYLE SHEET-->
+	<style type="text/css">
+		h1
+		{
+			padding-top: 20px;
+			padding-left: 130px;
+			font-family: "Comic Sans MS";
+		}
+		div
+		{
+			box-sizing: border-box;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			padding-right: 30px;
+			padding-left: 30px;
+			border: 3px solid blue;
+			font-size: 20px;
+			font-family: "Comic Sans MS";
+			display: inline-block;
+			margin-right: 1rem;
+			margin-left: 1rem;
+			width: 250px;
+			max-width: 250px;
+			height: 100px;
+			max-height: 100px;
+			text-align: center;
+		}
+	
+		p
+		{
+			font-size: 20px;
+			font-family: "Comic Sans MS";
+		}
+		button
+		{
+			font-size: 30px;
+			font-family: "Comic Sans MS";
+			margin-right: 1rem;
+			margin-left: 1rem;
+		}
+		button:hover
+		{
+			background-color: yellow;
+		}
+		.one
+		{
+			display:inline-block;
+		}
+		.two
+		{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to the Switcharoo :)</h1>	
+	<br>
+	<div id="box1" value="" onclick="pressed()">Peek a Boo!</div>
+	<button type="button"  id="myButton" value="-->"onclick="pressed()">--></button>
+	<!-- <button type="button"  class="two" onclick="pressed()"><--</button> -->
+	<div id="box2" class="style2" value="Peek a Boo!!" onclick="pressed()"></div>
+	<script language="javascript">
+		
+		function SwapText()
+		{
+  			var elem = document.getElementById("box1");
+  			var elem2 = document.getElementById("box2");
+  			if (elem.value=="")
+  			{
+  				elem.value="Peek a Boo!";
+  				elem.innerHTML="Peek a Boo!";
+  				elem2.value="";
+  				elem2.innerHTML="";
+  			}
+  			else
+  			{
+  				elem.value="";
+  				elem.innerHTML="";
+  				elem2.value="Peek a Boo!";
+  				elem2.innerHTML="Peek a Boo!";
+  			}
+		}
+
+		function SwapButton()
+		{
+			var elem = document.getElementById("myButton");
+   			if (elem.value=="-->") 
+   			{
+   				elem.value = "<--";
+   				elem.innerHTML = "<--";
+   			}
+    		else 
+    		{
+    			elem.value = "-->";
+    			elem.innerHTML = "-->";
+    		}
+		}
+		
+	
+   		function pressed()
+   		{
+   			SwapButton();
+   			SwapText();	
+   		}
+
+</script>
+</body>
+</html>
